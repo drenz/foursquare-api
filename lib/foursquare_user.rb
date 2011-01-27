@@ -16,8 +16,12 @@ module Foursquare
       perform_graph_request("users/requests")
     end
 
+    def user(user_id="self")
+      perform_graph_request("users/#{user_id}")
+    end
+
     #Aspects
-    def badges(user_id)
+    def badges(user_id="self")
       perform_graph_request("users/#{user_id}/badges")
     end
 
